@@ -8,7 +8,7 @@ import requests
 import json
 cmdlist = 'Список команд бота: \n —  .report (Связь с администратором). \n —  .ok *хим. реакция* (Решить хим. уравнение). \n — .donate (Поддержать бота).'
 donate = 'Привет, чтобы бот дольше жил и становился лучше, ему нужен качественный хостинг, это, конечно же, не бесплатно, поэтому ты можешь поддержать бота здесь: qiwi.com/n/ZABIVNOY2012.'
-tokeng="8547ad2af5e4a3fff8d9ae8d33f3bd47cc7218ad65d64e274beddd5821de9eb1fea1210c6cbc4a2a28c50"
+tokeng = os.environ.get("ximitoken")
 vk = vk_api.VkApi(token = tokeng)
 vk._auth_token()
 vk.get_api()
