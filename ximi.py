@@ -19,9 +19,9 @@ for event in longpoll.listen():
         if event.type == VkBotEventType.MESSAGE_NEW:
             if '.report' in event.object.text.lower():
                 if len(event.object.text.lower()) > 15:
-                vk.method("messages.send", {"peer_id":event.object['peer_id'], "Сообщение отправлено. ✅":donate, "random_id": random.randint(1, 2132138123)})
-            else:
-                vk.method("messages.send", {"peer_id":event.object['peer_id'], "Введите более подробное описание. ❌":donate, "random_id": random.randint(1, 2132138123)})
+                    vk.method("messages.send", {"peer_id":event.object['peer_id'], "Сообщение отправлено. ✅":donate, "random_id": random.randint(1, 2132138123)})
+                else:
+                    vk.method("messages.send", {"peer_id":event.object['peer_id'], "Введите более подробное описание. ❌":donate, "random_id": random.randint(1, 2132138123)})
             if event.object.text.lower() == '.help':
                 vk.method("messages.send", {"peer_id":event.object['peer_id'], "attachment": "photo-201383746_457239022", "message":cmdlist, "random_id": random.randint(1, 2132138123)})    
             elif event.object.text.lower() == '.donate':
@@ -62,7 +62,7 @@ for event in longpoll.listen():
             else:
                 print(event.object)
                 if event.object['peer_id'] == event.object['from_id']:
-                    С
+                    vk.method("messages.send", {"attachment": "photo-201383746_457239022", "peer_id":event.object['peer_id'], "message":"Ваша команда не была распознана ботом. (Для просмотра команд введите .help)", "random_id": random.randint(1, 2132138123)})    
     except Exception as s:
         print(s)
         None
