@@ -1,1 +1,1 @@
-worker: ximi.py
+worker: python ximi.py
