@@ -1,4 +1,4 @@
-import requests
+import requests, os
 import time
 import vk_api
 from bs4 import BeautifulSoup as BS
